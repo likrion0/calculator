@@ -1,0 +1,53 @@
+using System;
+
+class Calculator
+{
+    static void Main()
+    {
+        double num1, num2;
+        string operand;
+
+        Console.WriteLine("Calculadora Básica");
+        Console.WriteLine("------------------");
+
+        Console.Write("Ingrese el primer número: ");
+        num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Ingrese el operador (+, -, *, /): ");
+        operand = Console.ReadLine();
+
+        Console.Write("Ingrese el segundo número: ");
+        num2 = Convert.ToDouble(Console.ReadLine());
+
+        double result = 0;
+
+        switch (operand)
+        {
+            case "+":
+                result = num1 + num2;
+                break;
+            case "-":
+                result = num1 - num2;
+                break;
+            case "*":
+                result = num1 * num2;
+                break;
+            case "/":
+                if (num2 != 0)
+                {
+                    result = num1 / num2;
+                }
+                else
+                {
+                    Console.WriteLine("Error: División por cero no es válida.");
+                    return;
+                }
+                break;
+            default:
+                Console.WriteLine("Error: Operador no válido.");
+                return;
+        }
+
+        Console.WriteLine("El resultado es: " + result);
+    }
+}
